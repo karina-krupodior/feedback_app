@@ -26,12 +26,16 @@ export default function FeedbackForm({handleAdd}) {
     }
     const handleSubmit =  (e) => {
         e.preventDefault()
-const newDataList = {
-    text:review,
-    rating:rating
-}
-handleAdd(newDataList)
-setReview("")
+        if(review.trim().length > 10 ){
+            const newDataList = {
+                text:review,
+                rating:rating
+            }
+            handleAdd(newDataList)
+            setReview("")
+
+        }
+
     }
 return (
     <Card>
